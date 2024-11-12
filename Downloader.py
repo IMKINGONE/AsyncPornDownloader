@@ -81,6 +81,7 @@ async def main():
           download_url = clear_download_url(url_list)
           task2 = asyncio.create_task(download_video(tmp_url,download_url))
           await merge_file(await task2)
+          delete_ts_file()
 if __name__ == "__main__":
     asyncio.run(main())
 
